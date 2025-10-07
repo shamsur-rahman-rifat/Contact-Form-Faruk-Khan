@@ -11,7 +11,7 @@ router.post('/sendPartialFormData', sendPartialFormData);
 
 // Booking Routes
 
-router.post('/getEventTypes', getEventTypes);
+router.get('/getEventTypes', getEventTypes);
 router.post('/getAvailableTimes', getAvailableTimes);
 router.post('/createCalcomBooking', createCalcomBooking);
 
