@@ -60,7 +60,7 @@ export async function getAvailableTimes(req, res) {
       },
       params: {
         eventTypeSlug,
-        username: 'shamsur-rahman-rifat',
+        username: 'mdfarukkhan',
         start: startDate, // Must be in UTC
         end: endDate,     // Must be in UTC
         timeZone: timezone,
