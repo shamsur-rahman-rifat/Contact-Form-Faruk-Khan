@@ -18,19 +18,11 @@ const apiClient = axios.create({
 export async function getEventTypes(req, res) {
   try {
     const response = await apiClient.get('/event-types');
-    const eventTypes = response.data?.eventTypes?.data?.eventTypeGroups || [];
-
-    // Extract only the necessary fields (slug and id)
-    const filteredEventTypes = eventTypes.map(group => 
-      group.eventTypes.map(eventType => ({
-        id: eventType.id,
-        slug: eventType.slug
-      }))
-    ).flat(); // Flatten the array if there are multiple groups
+    const eventTypes = response.data || [];
 
     return res.status(200).json({
       message: 'Event types fetched successfully',
-      eventTypes: filteredEventTypes,
+      eventTypes,
     });
   } catch (error) {
     console.error('Cal.com Error [getEventTypes]:', error.response?.data || error.message);
