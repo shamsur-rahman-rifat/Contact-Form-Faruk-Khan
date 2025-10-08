@@ -27,7 +27,7 @@ export async function sendContactEmail(req, res) {
       email: process.env.FROM_EMAIL,
       toEmail: email,
       subject: 'Thank You for Your Submission!',
-      message: `Hello ${name},\n\nThank you for reaching out! We have received your meeting request and will get back to you on time.`,
+      message: `Dear ${name},\n\nThank you for reaching out to me. I have received your meeting request and will get back to you shortly. I appreciate your interest, and I look forward to connecting with you soon.\n\nBest regards,\nMd Faruk Khan`,
     });
 
     // Respond back with success

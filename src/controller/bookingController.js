@@ -42,12 +42,12 @@ export async function getAvailableTimes(req, res) {
     eventTypeSlug,
     startDate,
     endDate,
-    timezone = 'Asia/Dhaka',
+    timezone,
   } = req.body;
 
   if (!eventTypeSlug || !startDate || !endDate) {
     return res.status(400).json({
-      message: 'eventTypeSlug, startDate, and endDate are required.',
+      message: 'eventTypeSlug, timezone, startDate, and endDate are required.',
     });
   }
 
