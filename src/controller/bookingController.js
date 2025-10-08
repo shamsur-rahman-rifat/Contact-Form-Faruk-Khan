@@ -91,16 +91,14 @@ export async function createCalcomBooking(req, res) {
   const {
     name,
     email,
-    timeZone = 'Asia/Dhaka', // ✅ Now included
+    timeZone,
     startTime, // Must be in UTC ISO 8601 format
     eventTypeId,
-    eventTypeSlug,
-    username = 'shamsur-rahman-rifat', // Default your username
   } = req.body;
 
   if (!name || !email || !startTime || (!eventTypeId && !eventTypeSlug)) {
     return res.status(400).json({
-      message: 'Missing required fields: name, email, startTime, and eventTypeId or eventTypeSlug.',
+      message: 'Missing required fields: name, email, timeZone, startTime, and eventTypeId or eventTypeSlug.',
     });
   }
 
@@ -109,7 +107,7 @@ export async function createCalcomBooking(req, res) {
     attendee: {
       name,
       email,
-      timeZone // ✅ Required
+      timeZone
     }
   };
 
