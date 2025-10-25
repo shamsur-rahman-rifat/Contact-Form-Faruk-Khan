@@ -26,7 +26,7 @@ async function sendEmail({ name, toEmail, subject, message }) {
           Email: FROM_EMAIL,
           Name: 'Md Faruk Khan SEO',
         },
-        To: [{ Email: 'farukkhan.msp@gmail.com' }],
+        To: [{ Email: 'noreply@mdfarukkhan.com', Name: 'No Reply' }],
         Bcc: recipients,
         Subject: finalSubject,
         TextPart: finalTextPart,
